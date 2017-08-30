@@ -175,11 +175,11 @@ export class NavModelSrv {
         });
       }
 
-      menu.push({
-        title: 'View JSON',
-        icon: 'fa fa-fw fa-eye',
-        clickHandler: () => dashNavCtrl.viewJson()
-      });
+      //menu.push({
+      //  title: 'View JSON',
+      //  icon: 'fa fa-fw fa-eye',
+      //  clickHandler: () => dashNavCtrl.viewJson()
+      //});
     }
 
     if (this.contextSrv.isEditor && !dashboard.editable) {
@@ -190,11 +190,11 @@ export class NavModelSrv {
       });
     }
 
-    menu.push({
-      title: 'Shortcuts',
-      icon: 'fa fa-fw fa-keyboard-o',
-      clickHandler: () => dashNavCtrl.showHelpModal()
-    });
+    //menu.push({
+    //  title: 'Shortcuts',
+    //  icon: 'fa fa-fw fa-keyboard-o',
+    //  clickHandler: () => dashNavCtrl.showHelpModal()
+    //});
 
     if (this.contextSrv.isEditor) {
       menu.push({
