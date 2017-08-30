@@ -4,12 +4,13 @@
 			<span class="navbar-brand-btn-background">
 				<img src="public/img/grafana_icon.svg"></img>
 			</span>
-			<i class="icon-gf icon-gf-grafana_wordmark"></i>
+			<b style="font-size:15px">BBI SCADA</b>
+			<!--<i class="icon-gf icon-gf-grafana_wordmark"></i>-->
 			<i class="fa fa-caret-down"></i>
 			<i class="fa fa-chevron-left"></i>
 		</a>
 
-		<div class="navbar-section-wrapper">
+		<!--<div class="navbar-section-wrapper">
 			<a class="navbar-page-btn" ng-click="ctrl.showSearch()">
 				<i class="icon-gf icon-gf-dashboard"></i>
 				{{ctrl.dashboard.title}}
@@ -27,18 +28,23 @@
 			<li>
 				<a ng-click="ctrl.playlistSrv.next()"><i class="fa fa-step-forward"></i></a>
 			</li>
-		</ul>
+		</ul>-->
 
 		<ul class="nav pull-left dashnav-action-icons">
-			<li ng-show="::ctrl.dashboard.meta.canStar">
+			<!--<li ng-show="::ctrl.dashboard.meta.canStar">
 				<a class="pointer" ng-click="ctrl.starDashboard()">
 					<i class="fa" ng-class="{'fa-star-o': !ctrl.dashboard.meta.isStarred, 'fa-star': ctrl.dashboard.meta.isStarred}" style="color: orange;"></i>
 				</a>
+			</li>-->
+			<li ng-show="::ctrl.dashboard.meta.canShare">
+					<a ng-click="ctrl.shareDashboard(2)"bs-tooltip="'Export dashboard as JSON file'"data-placement="bottom">
+						<i class="fa fa-cloud-upload"></i>
+					</a>
 			</li>
-			<li ng-show="::ctrl.dashboard.meta.canShare" class="dropdown">
+			<!--		<li ng-show="::ctrl.dashboard.meta.canShare" class="dropdown">
 				<a class="pointer" ng-click="ctrl.hideTooltip($event)" bs-tooltip="'Share dashboard'" data-placement="bottom" data-toggle="dropdown"><i class="fa fa-share-square-o"></i></a>
 				<ul class="dropdown-menu">
-					<li>
+	share direct link button				<li>
 						<a class="pointer" ng-click="ctrl.shareDashboard(0)">
 							<i class="fa fa-link"></i> Link to Dashboard
 							<div class="dropdown-desc">Share an internal link to the current dashboard. Some configuration options available.</div>
@@ -56,7 +62,7 @@
 							<div class="dropdown-desc">Export the dashboard to a JSON file for others and to share on Grafana.com</div>
 						</a>
 					</li>
-				</ul>
+				</ul>-->
 			</li>
 			<li ng-show="::ctrl.dashboard.meta.canSave">
 				<a ng-click="ctrl.saveDashboard()" bs-tooltip="'Save dashboard <br> CTRL+S'" data-placement="bottom"><i class="fa fa-save"></i></a>
