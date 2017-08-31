@@ -87,8 +87,6 @@ function (angular, _) {
   });
 
   module.controller("DashLinksContainerCtrl", function($scope, $rootScope, $q, backendSrv, dashboardSrv, linkSrv) {
-    var currentDashId = dashboardSrv.getCurrent().id;
-
     function buildLinks(linkDef) {
       if (linkDef.type === 'dashboards') {
         if (!linkDef.tags) {
@@ -137,23 +135,13 @@ function (angular, _) {
       return backendSrv.search({tag: link.tags, limit: limit}).then(function(results) {
         return _.reduce(results, function(memo, dash) {
           memo.push({
-          title: dash.title,
-          url: 'dashboard/' + dash.uri,
-          icon: 'fa fa-th-large',
-          keepTime: link.keepTime,
-          includeVars: link.includeVars
-        });
-          // do not add current dashboard
-         // if (dash.id !== currentDashId) {
-         //   memo.push({
-         //     title: dash.title,
-         //     url: 'dashboard/' + dash.uri,
-         //     icon: 'fa fa-th-large',
-         //     keepTime: link.keepTime,
-         //     includeVars: link.includeVars
-         //   });
-         // }
-          return memo
+            title: dash.title,
+            url: 'dashboard/' + dash.uri,
+            icon: 'fa fa-th-large',
+            keepTime: link.keepTime,
+            includeVars: link.includeVars
+          });
+          return memo;
         }, []);
       });
     };
